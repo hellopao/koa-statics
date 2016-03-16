@@ -1,0 +1,30 @@
+{
+  "name": "koa-statics",
+  "version": "0.0.1",
+  "description": "static file server for koa.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hellopao/koa-statics.git"
+  },
+  "keywords": [
+    "koa"
+  ],
+  "author": {
+    "name": "qinjia",
+    "email": "qinjia@outlook.com"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hellopao/koa-statics/issues"
+  },
+  "homepage": "https://github.com/hellopao/koa-statics",
+  "_id": "koa-statics@0.0.1",
+  "_from": "koa-statics@"
+}

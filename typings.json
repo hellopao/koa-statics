@@ -1,0 +1,9 @@
+{
+  "name": "koa-statics",
+  "version": false,
+  "dependencies": {},
+  "ambientDependencies": {
+    "koa": "registry:dt/koa#2.0.0+20160125045424",
+    "node": "registry:dt/node#4.0.0+20160311162451"
+  }
+}

@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "removeComments": true,
+        "target": "es6",
+        "sourceMap": true
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}
