@@ -9,8 +9,7 @@ import * as Koa from "koa";
 interface IStaticOptions {
     index?: string;
     cache?: {
-        maxage?: number;
-        noCache?: boolean;
+        maxage: number;
     }
 }
 
@@ -36,12 +35,10 @@ async function statics(root: string, ctx: any, opts: IStaticOptions) {
         ctx.set('Last-Modified', stats.mtime.toUTCString());
         ctx.set('Content-Length', stats.size);
 
-        if (!opts.cache) {
-            if (opts.cache.noCache) {
-                ctx.set('Cache-Control',"no-cache");
-            } else {
-                ctx.set('Cache-Control',`max-age=${(opts.cache.maxage / 1000 | 0)}`);
-            }
+        if (opts.cache) {
+            ctx.set('Cache-Control',`max-age=${(opts.cache.maxage / 1000 | 0)}`);
+        } else {
+            ctx.set('Cache-Control',"no-cache");
         }
         ctx.type = extname(basename(path));
         ctx.body = fs.createReadStream(path);

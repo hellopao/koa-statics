@@ -1,6 +1,6 @@
 {
   "name": "koa-statics",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "static file server for koa.js",
   "main": "index.js",
   "scripts": {
@@ -25,6 +25,6 @@
     "url": "https://github.com/hellopao/koa-statics/issues"
   },
   "homepage": "https://github.com/hellopao/koa-statics",
-  "_id": "koa-statics@0.0.1",
+  "_id": "koa-statics@0.0.2",
   "_from": "koa-statics@"
 }
