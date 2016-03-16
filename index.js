@@ -42,7 +42,7 @@ function statics(root, ctx, opts) {
         catch (err) {
             if (~['ENOENT', 'ENAMETOOLONG', 'ENOTDIR'].indexOf(err.code))
                 return false;
-            ctx.throw(err);
+            ctx.throw(err, 500);
             return;
         }
         return true;

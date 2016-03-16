@@ -22,7 +22,7 @@ function stat(path): Promise<fs.Stats> {
     })
 }
 
-async function statics(root: string, ctx: any, opts: IStaticOptions) {
+async function statics(root: string, ctx: Koa.Context, opts: IStaticOptions) {
     let path = join(root, ctx.path);
 
     try {
@@ -34,7 +34,6 @@ async function statics(root: string, ctx: any, opts: IStaticOptions) {
 
         ctx.set('Last-Modified', stats.mtime.toUTCString());
         ctx.set('Content-Length', stats.size);
-
         if (opts.cache) {
             ctx.set('Cache-Control',`max-age=${(opts.cache.maxage / 1000 | 0)}`);
         } else {
@@ -44,7 +43,7 @@ async function statics(root: string, ctx: any, opts: IStaticOptions) {
         ctx.body = fs.createReadStream(path);
     } catch (err) {
         if (~['ENOENT', 'ENAMETOOLONG', 'ENOTDIR'].indexOf(err.code)) return false;
-        ctx.throw(err);
+        ctx.throw(err,500);
         return;
     }
 
@@ -58,7 +57,7 @@ export = function serve(root: string, opts?: IStaticOptions) {
     root = resolve(root);
     opts.index = opts.index || 'index.html';
 
-    return async function(ctx: any, next: () => any) {
+    return async function(ctx: Koa.Context, next: () => any) {
         if (ctx.method === "GET") {
             const exsist = await statics(root, ctx, opts);
             if (exsist) return;
