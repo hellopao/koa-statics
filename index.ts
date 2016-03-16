@@ -51,7 +51,7 @@ async function statics(root: string, ctx: any, opts: IStaticOptions) {
     return true;
 }
 
-function serve(root: string, opts?: IStaticOptions) {
+export = function serve(root: string, opts?: IStaticOptions) {
     assert(root, 'root directory is required to serve files');
 
     opts = opts || {};
@@ -66,5 +66,3 @@ function serve(root: string, opts?: IStaticOptions) {
         await next();
     }
 }
-
-export default serve;

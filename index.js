@@ -48,7 +48,7 @@ function statics(root, ctx, opts) {
         return true;
     });
 }
-function serve(root, opts) {
+module.exports = function serve(root, opts) {
     assert(root, 'root directory is required to serve files');
     opts = opts || {};
     root = path_1.resolve(root);
@@ -63,7 +63,5 @@ function serve(root, opts) {
             yield next();
         });
     };
-}
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = serve;
+};
 //# sourceMappingURL=index.js.map
