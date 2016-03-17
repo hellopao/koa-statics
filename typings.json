@@ -4,6 +4,7 @@
   "dependencies": {},
   "ambientDependencies": {
     "koa": "registry:dt/koa#2.0.0+20160125045424",
-    "node": "registry:dt/node#4.0.0+20160311162451"
+    "node": "registry:dt/node#4.0.0+20160311162451",
+    "supertest": "registry:dt/supertest#1.1.0+20151124102745"
   }
 }

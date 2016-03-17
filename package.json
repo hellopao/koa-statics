@@ -1,10 +1,10 @@
 {
   "name": "koa-statics",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "static file server for koa.js v2.x",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node node_modules/ava/cli.js test/index.js -t"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,12 @@
     "url": "https://github.com/hellopao/koa-statics/issues"
   },
   "homepage": "https://github.com/hellopao/koa-statics",
-  "_id": "koa-statics@0.0.4",
-  "_from": "koa-statics@"
+  "_id": "koa-statics@0.0.5",
+  "_from": "koa-statics@",
+  "dependencies": {},
+  "devDependencies": {
+    "ava": "^0.13.0",
+    "koa": "^2.0.0-alpha.3",
+    "supertest": "^1.2.0"
+  }
 }
